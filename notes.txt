@@ -1,0 +1,74 @@
+Three Pillars of writing Good HTML CSS and BUILDING GOOD WEBSITES:
+1.RERSPONSIVE DESIGN
+one website that works on all screen sizes
+we use:
+fluid layouts, media queries, responsive images,
+ correct units, desktop-first vs mobile-first
+
+
+
+
+
+
+2.MAINAINABLE AND SCALABLE CODE
+
+clean, easy-to-understand,reusable,
+how to : organize files, name classes, structure html
+
+
+
+
+
+
+3.WEB PERFORMANCE
+
+faster,smaller in size for the user to download less data
+how?
+less codes, less http requests, compress code,
+use css processor (SASS), less and compress images (its takes the biggest part of a website)
+
+
+all values change into pixels (px)
+
+
+* 1 rem = 10px
+
+em depends not only on the root font size but on the font size of the current element
+ex for rems: in the very begining put in css font-size: 1 rem  
+
+we dont write 0.4 , we write .4
+
+**** veryyyy important  (media queries):
+1- rem is very important in media queries
+
+2- put at the begining 
+html { font-size: % better than 10px}
+
+3- after that write all in rem
+
+4- when you change the px in html, 
+AUTOMATICALLY ALL THE OTHER FONT SIZES IN ""REM"" WILL CHANGE ALSO
+
+5-that's the trick, instead of writing all the media queries and to allow the user
+to change the sizes as he whant zoom in, zoom out, small sceens , large ones without 
+affecting the style of the content
+
+6- media queries for mobile phones or small screens:
+decrease the px in html (AUTOMATICALLY all rem decrease)
+
+6- media queries for mobile phones or bigger screens :
+increase the px in html (AUTOMATICALLY all rem increase)
+
+7- DISADVANTAGE OF SETTING: html {font-size: ..px}:
+remove the ability of the user to change the default font size of the browser
+ 
+8- so we use the PERCENTAGE % , TO BE according to the browser
+  html { font-size: 62.5%}
+
+9- 16 px = 100% (number of px/16 * 100 = %) 
+   16px = 1.6 rem = 100% 
+   1 rem = 10 px = (10/16)*100 = 62.5%
+   10 rem = 100 px = (100/16)*100 = 625%
+   2 rem = 20 px = (20/16) * 100 = 125%
+   1.4 rem = 14 px = (14/16) * 100 = 87%
+

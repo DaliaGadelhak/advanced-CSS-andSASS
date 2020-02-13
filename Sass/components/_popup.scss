@@ -1,0 +1,130 @@
+.popup{
+    height: 100vh;
+    width:100%;
+    position: fixed;
+    top:0;
+    left:0;
+    background-color: rgba($color-grey, .7);
+    z-index: 9999;  //to override the nav_button
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s;
+    line-height: 1;  // place of; x at the top
+    backdrop-filter: blur(7px);//the background of pop-up
+
+    &_content {  
+    @include absCenter;
+
+    width: 75%;
+    background-color: $color-white;
+    box-shadow: 0 3rem 4rem rgba($color-black,.2);
+    border-radius: 3px;
+    display:table; //fake a table
+    overflow: hidden;
+    opacity: 0;
+    transform:translate(-50%, -50%) scale(1);
+    transition: all .4s .2s;
+    }
+
+    &_left {
+        width: 33.33334%; // 3quarters
+        display:table-cell;
+
+        @include respond(tab-port){
+            width:100%;
+            display:block;
+        }
+    }
+
+    &_right{
+        width:66.66666%; // one quarter
+        display:table-cell;
+        vertical-align: middle ; // property in table cell
+        padding: 3rem 5rem;
+
+        @include respond(tab-port){
+            width:100%;
+            display:block;
+            padding: 0;
+        }
+
+        @include respond(tab-land){
+            width:100%;
+            display:block;
+            padding: 3rem 3rem;
+        }
+    }
+
+    &_img {
+   display: block; //so as not to occupy all the page
+   width: 100%;
+   padding: 1rem;
+
+   @include respond(tab-port){
+    width:70%;
+    padding: 0;
+    transform: translateX(4rem);
+}
+
+   @include respond(tab-land){
+    width:70%;
+    padding-top: 3rem;
+    transform: translateX(6rem);
+}
+    }
+
+    &_text{
+        font-size: 2rem;
+        margin-left: 2rem;
+        margin-bottom: 4rem;
+
+     @include respond(tab-port){
+        margin-bottom: 1rem;
+     }
+
+     @include respond(tab-land){
+        margin-bottom: 2rem;
+ 
+     }
+
+    }
+
+         /*make coloumns
+        column-count: 2;
+        column-gap: 4rem; //1em=14px
+        column-rule: 1px solid $color-grey;  //border
+        -moz-hyphens: ;
+        -webkit-hyphens: ;
+        hyphens: auto;*/
+
+    
+    //open states
+    &:target {
+        opacity: 1;
+        visibility: visible;
+       }
+
+     &:target &_content {
+        opacity: 1;
+        transform:translate(-50%, -50%) scale(1);
+     }
+
+       &_close {
+           &:link,
+           &:visited{
+               color:$color-primary-light;
+               position: absolute;
+               top: 2.5rem;
+               right:2.5rem;
+               font-size: 3rem;
+               text-decoration: none;
+               display: inline-block;
+               transition: all .2s;
+               line-height: 1;
+           }
+
+           &:hover{
+              color: $color-black ; 
+           }
+        }
+}
